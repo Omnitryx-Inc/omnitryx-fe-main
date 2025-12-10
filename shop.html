@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — Omnitryx Inc.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-alt:#f4f6f8;
+      --text:#111111;
+      --muted:#6b7280;
+      --accent:#C9A86A;
+      --accent-dark:#9A7B4E;
+      --card:#ffffff;
+      --radius:14px;
+      --shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    html, body {
+        height: 100%;
+        }
+
+        body {
+        display: flex;
+        flex-direction: column;
+        }
+
+        main {
+        flex: 1;
+        }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,0.7);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid #e5e7eb;
+    }
+    .nav-inner{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 0;
+    }
+    .brand{
+      font-size:1.35rem;font-weight:700;
+      letter-spacing:-0.5px;
+    }
+    .brand span{color:var(--accent)}
+    nav{
+      display:flex;
+      gap:24px;
+      font-weight:500;
+    }
+    nav a:hover{color:var(--accent-dark)}
+
+    /* SHOP PAGE */
+    .section{padding:80px 0}
+    h1{
+      text-align:center;
+      font-size:2.4rem;
+      margin-bottom:12px;
+      font-weight:700;
+    }
+    .subtitle{
+      text-align:center;
+      color:var(--muted);
+      margin-bottom:50px;
+      font-size:1.05rem;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:26px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:24px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid #ececec;
+      transition:0.25s;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 28px rgba(0,0,0,0.09);
+    }
+
+    .card h3{
+      font-size:1.25rem;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+    .price{
+      font-size:1.15rem;
+      font-weight:600;
+      color:var(--accent-dark);
+      margin:6px 0 16px;
+    }
+    .card p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .btn{
+      background:var(--accent);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:10px;
+      font-weight:600;
+      display:inline-block;
+      transition:0.2s;
+    }
+    .btn:hover{
+      background:var(--accent-dark);
+    }
+
+    footer{
+      padding:40px 0;
+      border-top:1px solid #e5e7eb;
+      background:#fafafa;
+      margin-top:60px;
+    }
+    footer .inner{
+      display:flex;justify-content:center;text-align:center;
+      font-size:0.9rem;color:var(--muted);
+      line-height:1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav-inner">
+    <div class="brand">Omnitryx <span>Inc.</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="ebooks.html">E-Books</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="section">
+  <div class="container">
+    <h1>Shop Services</h1>
+    <p class="subtitle">Professional digital services delivered with precision and reliability.</p>
+
+    <div class="cards">
+
+      <div class="card" id="api">
+        <h3>API Integrations</h3>
+        <div class="price">$149 CAD</div>
+        <p>Professional integration of third-party APIs into your system with secure, modern best practices.</p>
+        <a class="btn" href="#">Purchase</a>
+      </div>
+
+      <div class="card" id="stripe">
+        <h3>Stripe Payment Setup</h3>
+        <div class="price">$129 CAD</div>
+        <p>Full Stripe Checkout integration including products, billing, and secure payment flows.</p>
+        <a class="btn" href="#">Purchase</a>
+      </div>
+
+      <div class="card" id="automation">
+        <h3>Automation & Workflows</h3>
+        <div class="price">$99 CAD</div>
+        <p>Automations using scripts, SaaS tools, and backend services to save time and reduce manual work.</p>
+        <a class="btn" href="#">Purchase</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container inner">
+    <div>
+      <strong>© 2025 Omnitryx Inc.</strong><br>
+      Business Number (BN): 753152438<br>
+      Corporation Number: 17533110<br>
+      Ontario Corporation Number (OCN): 1001438238
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
