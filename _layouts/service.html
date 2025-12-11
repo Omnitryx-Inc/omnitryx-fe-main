@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<main>
+    <section class="hero">
+        <div class="container hero-inner">
+
+            <div>
+                <h1 class="text-left">{{ page.title }}</h1>
+
+                {% if page.subtitle %}
+                <p class="lead">{{ page.subtitle }}</p>
+                {% endif %}
+
+                <div style="margin:25px 0 30px;">
+
+                    <p style="font-size:2.3rem; font-weight:700; margin:0; color:var(--accent-dark);">
+                        {{ page.setup_price }}
+                    </p>
+                    <p style="color:var(--muted); font-size:1.05rem; margin-top:2px;">
+                        One-time payment
+                    </p>
+
+                    {% if page.monthly_price %}
+                    <div style="height:1px; background:var(--border-light); width:180px; margin:10px 0;"></div>
+
+                    <p style="font-size:2.3rem; font-weight:600; margin:0; color:var(--accent-dark);">
+                        {{ page.monthly_price }}
+                    </p>
+                    <p style="color:var(--muted); font-size:1.05rem; margin-top:2px;">
+                        Monthly hosting & maintenance
+                    </p>
+                    {% endif %}
+
+                </div>
+
+                <a class="btn primary" style="padding:14px 34px; font-size:1.1rem;" href="{{ page.stripe_link }}">
+                    Get Started
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    {{ content }}
+
+        <section class="p40 about">
+            <div class="container about-grid">
+
+                <div>
+                    <h2>How We Work</h2>
+                    <p>
+                        Our workflow is built to be clear, simple, and efficient. 
+                        We focus on understanding your goals, defining a straightforward plan, and delivering high-quality results without unnecessary complexity.
+                    </p>
+                    <p>
+                        From the moment you start a project, we provide structured communication, transparent progress updates, and a smooth experience from beginning to end.
+                    </p>
+                </div>
+
+                <div>
+                    <h2>Our Process</h2>
+                    <ul style="line-height:1.8">
+                        <li><strong>Discovery</strong>: We collect your requirements, objectives, and any important details.</li>
+                        <li><strong>Planning</strong>: A clear project plan is created so you know exactly what to expect.</li>
+                        <li><strong>Execution</strong>: We begin the work, keeping you informed as key milestones are completed.</li>
+                        <li><strong>Review</strong>: You review the delivered work and request revisions where needed.</li>
+                        <li><strong>Finalization</strong>: After approval, the project is completed, delivered, or launched.</li>
+                        <li><strong>Support</strong>: If the service includes ongoing support or monthly components, we continue managing and maintaining everything for you.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    <section class="p40 services bg-alt">
+        <div class="container">
+        <h2 class="section-title">Refund policy</h2>
+        <p class="muted">
+            Refunds are only available if work has not started. Once planning or development begins, the project becomes non-refundable due to allocated time and resources.
+        </p>
+
+        <div class="service-cta">
+            <a class="btn primary" href="{{ page.stripe_link }}">Start this project</a>
+        </div>
+        </div>
+    </section>
+
+</main>
