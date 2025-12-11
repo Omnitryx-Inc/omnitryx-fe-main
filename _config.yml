@@ -1,0 +1,14 @@
+title: "Omnitryx Inc."
+baseurl: ""
+url: "https://omnitryx.ca"   # or your GH Pages URL
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+  services:
+    output: true
+    permalink: /services/:name/
+  legal:
+    output: true
+    permalink: /legal/:name/
