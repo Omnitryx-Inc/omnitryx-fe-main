@@ -23,10 +23,11 @@ include:
 
 defaults:
   - scope:
-      path: "pages"
+      path: ""
       type: "pages"
     values:
       layout: "default"
+      description: "Omnitryx provides premium digital services, automation, and development."
 
   - scope:
       path: "services"
