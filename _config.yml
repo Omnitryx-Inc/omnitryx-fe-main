@@ -1,14 +1,55 @@
 title: "Omnitryx Inc."
+description: "Premium digital services & automation."
+
+url: "https://omnitryx.ca"
 baseurl: ""
-url: "https://omnitryx.ca"   # or your GH Pages URL
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
 collections:
-  pages:
-    output: true
-    permalink: /:name/
   services:
     output: true
     permalink: /services/:name/
-  legal:
-    output: true
-    permalink: /legal/:name/
+
+# Tell Jekyll "pages/" contains standalone pages
+include:
+  - pages
+
+defaults:
+  - scope:
+      path: "pages"
+      type: "pages"
+    values:
+      layout: "default"
+
+  - scope:
+      path: "services"
+      type: "services"
+    values:
+      layout: "service"
+
+  - scope:
+      path: "legal"
+    values:
+      layout: "default"
+
+permalink: /:title/
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - _site
+  - .gitignore
+  - .DS_Store
