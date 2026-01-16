@@ -4,6 +4,7 @@ title: "Support - Omnitryx Inc."
 permalink: /support/
 ---
 
+<main>
 <section class="contact-section">
   <div class="container">
     <h1>Support</h1>
@@ -12,7 +13,10 @@ permalink: /support/
       We're here to help. Send us a message and we'll reply within 24-48 hours.
     </p>
 
-    <form action="https://formspree.io/f/xlgdjvvr" method="POST" class="contact-form">
+    <form action="https://4ruolwraw4.execute-api.us-east-1.amazonaws.com/prod/contact" method="POST" class="contact-form">
+      <input type="hidden" name="client" value="omnitryx">
+  		<input type="hidden" name="form_type" value="support">
+
       <label>Your Name</label>
       <input type="text" name="name" placeholder="John Doe" required />
 
@@ -25,5 +29,37 @@ permalink: /support/
       <button type="submit" class="btn primary">Send Message</button>
     </form>
 
+    <div id="form-success" class="form-success-message" style="display:none;">
+      Your request has been received and, if needed, our team will contact you shortly.
+    </div>
+
   </div>
 </section>
+</main>
+
+<script>
+document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault(); // stop default form submission
+
+  const formData = Object.fromEntries(new FormData(this).entries());
+
+  try {
+    const response = await fetch(this.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      this.style.display = 'none'; // hide the form
+      document.getElementById('form-success').style.display = 'block'; // show success message
+    } else {
+      alert('Error: ' + result.error); // only show error
+    }
+  } catch (err) {
+    alert('Submission failed. Please try again later.');
+  }
+});
+</script>
