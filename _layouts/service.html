@@ -35,9 +35,12 @@ layout: default
 
                 </div>
 
-                <a class="btn primary" style="padding:14px 34px; font-size:1.1rem;" href="{{ page.stripe_link }}" target="_blank">
-                    Get Started
+                <a class="btn primary" style="padding:14px 34px; font-size:1.1rem;" href="/contact/?service={{ page.title | url_encode }}">
+                    Start This Project
                 </a>
+                <p style="margin-top:10px; font-size:0.9rem; color:var(--muted);">
+                    Tell us about your project and we will reach out within 24-48 hours.
+                </p>
             </div>
 
         </div>
@@ -82,7 +85,10 @@ layout: default
         </p>
 
         <div class="service-cta">
-            <a class="btn primary" href="{{ page.stripe_link }}">Start this project</a>
+            <a class="btn primary" href="/contact/?service={{ page.title | url_encode }}">Start this project</a>
+            <p style="margin-top:10px; font-size:0.9rem; color:var(--muted);">
+                Submit your project details and we will be in touch within 24-48 hours.
+            </p>
         </div>
         </div>
     </section>

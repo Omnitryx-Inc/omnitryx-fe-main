@@ -7,15 +7,15 @@ permalink: /contact/
 <main>
 <section class="contact-section">
   <div class="container">
-    <h1>Contact Us</h1>
-    <p>
-      Have questions about digital services, API integrations, or our online products?
-      We're here to help. Send us a message and we'll reply within 24-48 hours.
+    <h1 id="contact-title">Contact Us</h1>
+    <p id="contact-desc">
+      Tell us about your project or inquiry. We review every message and reply within 24-48 hours. No commitment required to get in touch.
     </p>
 
     <form action="https://forms.omnitryx.ca/contact" method="POST" class="contact-form">
       <input type="hidden" name="client" value="omnitryx">
-  		<input type="hidden" name="form_type" value="contact">
+      <input type="hidden" name="form_type" value="contact">
+      <input type="hidden" name="service" id="service-input" value="">
 
       <label>Your Name</label>
       <input type="text" name="name" placeholder="John Doe" required />
@@ -24,7 +24,7 @@ permalink: /contact/
       <input type="email" name="email" placeholder="you@example.com" required />
 
       <label>Message</label>
-      <textarea name="message" rows="5" placeholder="How can we assist you?" required></textarea>
+      <textarea name="message" id="message-field" rows="5" placeholder="How can we assist you?" required></textarea>
 
       <button type="submit" class="btn primary">Send Message</button>
     </form>
@@ -38,6 +38,21 @@ permalink: /contact/
 </main>
 
 <script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var service = params.get('service');
+  if (service) {
+    var titleEl = document.getElementById('contact-title');
+    var descEl = document.getElementById('contact-desc');
+    var messageField = document.getElementById('message-field');
+    var serviceInput = document.getElementById('service-input');
+    if (titleEl) titleEl.textContent = 'Start a Project';
+    if (descEl) descEl.textContent = 'You\'re inquiring about: ' + service + '. Fill out the form below and we will reach out within 24-48 hours to discuss your project.';
+    if (serviceInput) serviceInput.value = service;
+    if (messageField) messageField.value = 'I\'m interested in the ' + service + ' service.\n\nProject details:\n';
+  }
+})();
+
 document.querySelector('.contact-form').addEventListener('submit', async function(e) {
   e.preventDefault(); // stop default form submission
 
