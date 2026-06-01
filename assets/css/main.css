@@ -605,17 +605,18 @@ footer .inner {
 /* HERO SPLIT (home page with photo) */
 .hero-split {
     display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 60px;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
     align-items: center;
 }
 
-.hero-eyebrow {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--accent-dark);
-    margin-bottom: 14px;
-    letter-spacing: 0.01em;
+.hero-photo .hero-img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-height: 460px;
+    object-fit: cover;
+    object-position: top;
 }
 
 .founder-photo {
@@ -636,7 +637,8 @@ footer .inner {
         text-align: center;
     }
 
-    .founder-photo {
+    .founder-photo,
+    .hero-img {
         max-width: 260px;
     }
 }
