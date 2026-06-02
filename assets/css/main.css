@@ -643,29 +643,60 @@ footer .inner {
     }
 }
 
-/* SERVICE LIST (tech page) */
-.services-list {
-    max-width: 760px;
+/* SERVICES GRID (tech page) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
 }
 
-.service-item {
-    padding: 28px 0;
-    border-bottom: 1px solid #ececec;
+.service-card {
+    background: var(--card);
+    border: 1px solid #ececec;
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: 0.25s;
 }
 
-.service-item:last-child {
-    border-bottom: none;
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-.service-item h3 {
-    font-size: 1.2rem;
+.service-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(201, 168, 106, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--accent-dark);
+}
+
+.service-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.service-card h3 {
+    font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.service-item p {
+.service-card p {
     color: var(--muted);
+    font-size: 0.95rem;
     line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* MOBILE RESPONSIVE FIXES */
@@ -782,6 +813,90 @@ footer .inner {
 .service-cta .btn.primary {
 	padding: 14px 36px;
 	font-size: 1.05rem;
+}
+
+/* BOOK FEATURE (publishing page) */
+.book-feature {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.book-cover-wrap {
+    position: sticky;
+    top: 100px;
+}
+
+.book-cover {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+}
+
+.book-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+}
+
+.book-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.25;
+}
+
+.book-subtitle {
+    font-size: 1rem;
+    color: var(--accent-dark);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.book-details p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.book-quote {
+    border-left: 3px solid var(--accent);
+    margin: 20px 0;
+    padding: 12px 18px;
+    background: rgba(201, 168, 106, 0.06);
+    border-radius: 0 8px 8px 0;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.book-quote cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+@media (max-width: 760px) {
+    .book-feature {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .book-cover-wrap {
+        position: static;
+        text-align: center;
+    }
+
+    .book-cover {
+        max-width: 220px;
+    }
 }
 
 /* LEGAL PAGES */
