@@ -1,5 +1,5 @@
 title: "Omnitryx Inc."
-description: "Premium digital services & automation."
+description: "Omnitryx Inc. is a Canadian company building businesses that create jobs, serve people, and make communities economically stronger. Technology, publishing, and more."
 
 url: "https://omnitryx.ca"
 baseurl: ""
@@ -27,7 +27,7 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      description: "Omnitryx provides premium digital services, automation, and development."
+      description: "Omnitryx Inc. is a Canadian company building businesses that create jobs, serve people, and make communities economically stronger."
 
   - scope:
       path: "services"
